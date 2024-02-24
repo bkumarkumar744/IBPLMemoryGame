@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2830FD8D2B8A19D900334B62 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2830FD8C2B8A19D900334B62 /* GameView.swift */; };
+		2830FD8F2B8A1BE800334B62 /* SelectLavelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2830FD8E2B8A1BE800334B62 /* SelectLavelView.swift */; };
 		28E938912B89AC980052B6D6 /* IBPL_MemoryGameApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E938902B89AC980052B6D6 /* IBPL_MemoryGameApp.swift */; };
 		28E938932B89AC980052B6D6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E938922B89AC980052B6D6 /* ContentView.swift */; };
 		28E938952B89AC9B0052B6D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28E938942B89AC9B0052B6D6 /* Assets.xcassets */; };
@@ -36,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2830FD8C2B8A19D900334B62 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		2830FD8E2B8A1BE800334B62 /* SelectLavelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectLavelView.swift; sourceTree = "<group>"; };
 		28E9388D2B89AC980052B6D6 /* IBPL-MemoryGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "IBPL-MemoryGame.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		28E938902B89AC980052B6D6 /* IBPL_MemoryGameApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IBPL_MemoryGameApp.swift; sourceTree = "<group>"; };
 		28E938922B89AC980052B6D6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -100,6 +104,8 @@
 			children = (
 				28E938902B89AC980052B6D6 /* IBPL_MemoryGameApp.swift */,
 				28E938922B89AC980052B6D6 /* ContentView.swift */,
+				2830FD8E2B8A1BE800334B62 /* SelectLavelView.swift */,
+				2830FD8C2B8A19D900334B62 /* GameView.swift */,
 				28E938BA2B89ACAF0052B6D6 /* Card.swift */,
 				28E938BC2B89AF850052B6D6 /* CardView.swift */,
 				28E938942B89AC9B0052B6D6 /* Assets.xcassets */,
@@ -267,6 +273,8 @@
 				28E938BB2B89ACAF0052B6D6 /* Card.swift in Sources */,
 				28E938BD2B89AF850052B6D6 /* CardView.swift in Sources */,
 				28E938912B89AC980052B6D6 /* IBPL_MemoryGameApp.swift in Sources */,
+				2830FD8D2B8A19D900334B62 /* GameView.swift in Sources */,
+				2830FD8F2B8A1BE800334B62 /* SelectLavelView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
