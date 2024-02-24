@@ -26,6 +26,7 @@ struct ContentView: View {
     @State var startGameTimer: Bool = false
     @State private var elapsedTime: TimeInterval = 0
     @State private var timer: Timer?
+    @State private var showGameComplitionAlert = false
     
     var body: some View {
         GeometryReader{geo in
@@ -44,11 +45,18 @@ struct ContentView: View {
                 
                 LazyVGrid(columns: fourColumnGrid, spacing: 2.5) {
                     ForEach(cards){card in
-                        CardView(card: card,
-                                 width: Int(geo.size.width/4),
-                                 MatchedCards: $MatchedCards,
-                                 UserChoices: $UserChoices,
-                                 startGameTimer: $startGameTimer)
+                        CardView(
+                            card: card,
+                            width: Int(geo.size.width/4),
+                            MatchedCards: $MatchedCards,
+                            UserChoices: $UserChoices,
+                            startGameTimer: $startGameTimer,
+                            onAllCardsMatched: {
+                                showGameComplitionAlert = true
+                                stopTimer()
+                            },
+                            totalCardsCount: cards.count
+                        )
                     }
                 }
                 
@@ -65,6 +73,13 @@ struct ContentView: View {
                 
                 Spacer()
             }
+            .alert(isPresented: $showGameComplitionAlert) {
+                Alert(
+                    title: Text("Congratulations!"),
+                    message: Text("You've matched all the cards in \(String(format: "%02d:%02d", Int(elapsedTime / 60), Int(elapsedTime) % 60))."),
+                    dismissButton: .default(Text("OK"))
+                )
+            }
         }
     }
     
@@ -72,6 +87,12 @@ struct ContentView: View {
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
             elapsedTime += 1
         }
+    }
+    
+    
+    private func stopTimer() {
+        timer?.invalidate()
+        timer = nil
     }
 }
 

@@ -15,6 +15,8 @@ struct CardView: View {
     @Binding var UserChoices: [Card]
     @State private var showCards = true
     @Binding var startGameTimer: Bool
+    var onAllCardsMatched: () -> Void
+    let totalCardsCount: Int
     
     var body: some View {
         VStack {
@@ -70,6 +72,10 @@ struct CardView: View {
         if UserChoices[0].text == UserChoices[1].text {
             MatchedCards.append(UserChoices[0])
             MatchedCards.append(UserChoices[1])
+            
+            if MatchedCards.count == totalCardsCount {
+                onAllCardsMatched()
+            }
         }
         UserChoices.removeAll()
     }
