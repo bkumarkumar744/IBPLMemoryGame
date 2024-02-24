@@ -13,9 +13,8 @@ struct CardView: View {
     let width: Int
     @Binding var MatchedCards: [Card]
     @Binding var UserChoices: [Card]
-    
-    // New state variable to control face-up state
     @State private var showCards = true
+    @Binding var startGameTimer: Bool
     
     var body: some View {
         VStack {
@@ -30,11 +29,11 @@ struct CardView: View {
                         RoundedRectangle(cornerRadius: 0)
                             .stroke(Color.gray, lineWidth: 1))
                     .onAppear {
-                        // Use onAppear to trigger the animation when the view appears
                         if showCards {
                             DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
                                 withAnimation(.smooth) {
                                     self.showCards = false
+                                    self.startGameTimer = true
                                 }
                             }
                         }
