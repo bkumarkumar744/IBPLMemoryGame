@@ -21,7 +21,7 @@ class Card: Identifiable, ObservableObject {
     }
 }
 
-let cardValues: [String] = ["shape1", "shape2", "shape3", "shape4"]//, "shape5", "shape6", "shape7", "shape8"]//, "🐻‍❄️", "🐨", "🐯", "🦁"]
+let cardValues: [String] = ["shape1", "shape2", "shape3", "shape4", "shape5", "shape6", "shape7", "shape8"]
 
 func createCardList() -> [Card] {
     var cardList = [Card]()
